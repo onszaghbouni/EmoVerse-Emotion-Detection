@@ -1,0 +1,40 @@
+/* styles.css - chat bubbles + avatars + dark theme stylings */
+:root{
+  --bg:#0b1220;
+  --card:#0f1724;
+  --bubble-user:#1f6feb;
+  --bubble-bot:#111827;
+  --text:#e6eef8;
+  --muted:#94a3b8;
+  --accent:#7c3aed;
+}
+
+html, body, .reportview-container .main {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Chat layout */
+.chat-header { padding: 8px 0; color: var(--text); }
+.message-row { display: flex; align-items:flex-start; gap:12px; margin: 12px 0; }
+.user-row { justify-content: flex-end; }
+.bot-row  { justify-content: flex-start; }
+
+.avatar { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; background: linear-gradient(135deg,#111827,#1f2937); color:var(--text); }
+.avatar-img { width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.04); }
+
+/* Bubbles */
+.bubble { padding:12px; border-radius:14px; max-width:72%; box-shadow: 0 6px 18px rgba(2,6,23,0.6); font-size:14px; line-height:1.4; }
+.user-bubble { background: linear-gradient(180deg,var(--bubble-user), #0058d9); color: white; border-bottom-right-radius:4px; }
+.bot-bubble  { background: linear-gradient(180deg,var(--card), #0b1220); color: var(--text); border-bottom-left-radius:4px; }
+
+/* Message text/meta */
+.message-text { margin-bottom:8px; white-space:pre-wrap; word-wrap:break-word; }
+.message-meta { font-size:12px; color:var(--muted); margin-top:6px; }
+.message-probs { font-size:12px; color:var(--muted); margin-top:6px; }
+
+/* Small responsive fixes */
+@media (max-width: 800px){
+  .bubble { max-width:86%; }
+  .avatar, .avatar-img { width:36px; height:36px; }
+}
